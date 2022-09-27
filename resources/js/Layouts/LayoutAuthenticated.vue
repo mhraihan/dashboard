@@ -32,9 +32,6 @@ Inertia.on("navigate", () => {
 });
 
 const menuClick = (event, item) => {
-  if (item.isToggleLightDark) {
-    styleStore.setDarkMode();
-  }
 
   if (item.isLogout) {
     // Add:
@@ -46,13 +43,13 @@ const menuClick = (event, item) => {
 <template>
   <div
     :class="{
-      dark: styleStore.darkMode,
+      dark: false,
       'overflow-hidden lg:overflow-visible': isAsideMobileExpanded,
     }"
   >
     <div
       :class="[layoutAsidePadding, { 'ml-60 lg:ml-0': isAsideMobileExpanded }]"
-      class="w-screen min-h-screen  pt-14 transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100"
+      class="w-screen min-h-screen pt-14 transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100"
     >
       <NavBar
         :menu="menuNavBar"
