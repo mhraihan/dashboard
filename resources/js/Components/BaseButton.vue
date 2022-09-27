@@ -41,6 +41,10 @@ const props = defineProps({
     type: String,
     default: null,
   },
+    to: {
+    type: String,
+    default: null,
+  },
   small: Boolean,
   outline: Boolean,
   active: Boolean,
@@ -53,7 +57,7 @@ const is = computed(() => {
     return props.as;
   }
 
-  if (props.to) {
+  if (props.routeName) {
     return Link;
   }
 
